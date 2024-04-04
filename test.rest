@@ -1,0 +1,46 @@
+GET http://localhost:8001
+
+###
+POST http://localhost:8001/find_rate
+
+78701
+
+###
+POST http://localhost:8001/find_rate
+
+90210
+
+###
+GET http://localhost:8003/
+
+###
+GET http://localhost:8003/init
+
+###
+POST http://localhost:8003/create_order
+
+{
+  "order_id": 123,
+  "product_id": 321,
+  "quantity": 2,
+  "subtotal": 20.0,
+  "shipping_address": "123 Main St, Anytown USA",
+  "shipping_zip": "90210",
+  "total": 0.0
+}
+
+###
+POST http://localhost:8003/create_order
+
+{
+  "order_id": 123,
+  "product_id": 321,
+  "quantity": 2,
+  "subtotal": 20.0,
+  "shipping_address": "123 Main St, Anytown USA",
+  "shipping_zip": "78701",
+  "total": 0.0
+}
+
+###
+GET http://localhost:8003/orders
